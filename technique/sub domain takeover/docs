@@ -1,0 +1,27 @@
+Findomain , subfinder, httpx, SubOver
+================================================================================
+subfinder -d domain_name | httpx --status-code --title
+
+=======================================================
+findomain -o -t linktr.ee
+
+subover -l list_name -a
+
+
+==========================
+use github page to takeover
+https://github.com/basantbhandari/bug
+====================================
+subdover
+
+
+
+
+
+
+
+
+
+
+
+

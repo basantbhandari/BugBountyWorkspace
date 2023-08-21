@@ -1,0 +1,30 @@
+tools used:
+=============
+for depecndency confusion
+==========================
+find all the sub domain using tools(subfinder and more) suth that in a format
+like: https://exampl.e1.com
+
+to convert exampl.e1.com into https://exampl.e1.com
+we use httpx.
+httpx -l targets.txt -o att.txt
+=====================================
+nuclei -l att.txt -t nuclei_templete_location.yaml -o package.txt -v
+
+=======================================================
+for automatic downloads of package.txt file
+============================================
+https://github.com/tomnomnom/fff
+=========
+use this tool
+==========================
+ghorg to clone all the repositoty
+ghorg clone Att -t [ssh-github-token]
+==================================
+find . -type f -name package.json | xargs -n1 -I{} cat {} | jq -r '.dependencies + .devDependencies' | cut -d : -f 1 | tr -d '"|}|{' | sort -u | tr -s "     " | sort -u | xargs -n1 -I{} echo "https://registry.npmjs.org/{}" | grep -v "@" | httpx -status-code -silent -content-length -mc 404
+====================================================
+use above cmd to copy only package.json
+====================================================
+https://www.youtube.com/watch?v=t7puzQl2UoA&t=1098s
+
+
